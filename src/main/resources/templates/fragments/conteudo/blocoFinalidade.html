@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="card bg-light py-3 col-6" th:fragment="finalidade">
+    <div class="row">
+        <div class="form-floating col-6">
+            <select class="form-select form-slect-xs mb-1"
+                    name="baseCalc"
+                    aria-label="">
+                <option selected>Selecione</option>
+                <option value="1">1 - Parcial</option>
+                <option value="2">2 - Total</option>
+            </select>
+            <label for="floatingPlaintextInput">Base Cálculo:</label>
+        </div>
+        <div class="form-floating col-6">
+            <select class="form-select  mb-1" name="finalidade"
+                    aria-label="" onchange="FinalidadeDiv(this)">
+                <option data-final="0" selected>Selecione</option>
+                <option th:each="finalidade : ${finalidades}"
+                        th:data-final="|${finalidade.id}|" th:value="${finalidade.id}"
+                        th:text="${finalidade.descricao}"></option>
+            </select>
+            <label for="floatingPlaintextInput">Finalidade:</label>
+        </div>
+    </div>
+    <div id="outros" style="display: none;">
+        <small class="font-monospace text-muted text-uppercase mb-5 py-3">Finalidade</small>
+        <div class="form-group row">
+            <div class="form-floating col-3">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Agência</label>
+            </div>
+            <div class="form-floating col-3">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Conta</label>
+            </div>
+            <div class="form-floating col-2">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Digito</label>
+            </div>
+        </div>
+    </div>
+    <div id="bb" style="display: none;">
+        <small class="font-monospace text-muted text-uppercase mb-5 py-3">Finalidade</small>
+        <div class="form-group row">
+            <div class="form-floating col-3">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Agência</label>
+            </div>
+            <div class="form-floating col-3">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Conta</label>
+            </div>
+            <div class="form-floating col-2">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Digito</label>
+            </div>
+        </div>
+    </div>
+    <div id="diversas" style="display: none;">
+        <small class="font-monospace text-muted text-uppercase mb-5 py-3">Finalidade</small>
+        <div class="form-group row">
+            <div class="form-floating col-5">
+                <input type="text"
+                       class="form-control form-control-sm"
+                       name="" value="" autocomplete="off">
+                <label for="floatingPlaintextInput">Informe a
+                    Finalidade</label>
+            </div>
+            <div class="form-check col-3 ps-5 py-3">
+                <input class="form-check-input" type="checkbox"
+                       value=""
+                       id="GuiaFGTS">
+                <label class="form-check-label" for="GuiaFGTS">
+                    Gerar Guia FGTS
+                </label>
+            </div>
+            <div class="form-check col-3 ps-5 py-3">
+                <input class="form-check-input" type="checkbox"
+                       value=""
+                       id="GuiaDIRF">
+                <label class="form-check-label" for="GuiaDIRF">
+                    Gerar DIRF
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

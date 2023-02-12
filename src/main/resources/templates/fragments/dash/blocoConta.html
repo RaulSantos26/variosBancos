@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="col-5" id="blocoCConta" th:fragment="conta" th:styleappend="${(hide == 1) ?'display: none;' : ''}">
+    <div th:each="dado : ${aof}">
+        <div class="card c-extrato">
+            <div class="d-flex align-items-center highlight-toolbar bg-light ps-3 pe-2 py-2 mb-2">
+                <small class="font-monospace text-muted text-uppercase">Ordem de Pagamento - AOF <span
+                        id="nm-AOF" th:utext="${dado.judicial}">2022/1234567</span></small>
+                <div class="d-flex ms-auto">
+                    <a type="button" class="btn btn-sm btn-rounded btn-clipboard"
+                       href="/"><i
+                            class="bi bi-arrow-return-left" data-bs-toggle="" data-bs-target="#"
+                            id="Botãovoltar">
+                        voltar</i></a>
+                </div>
+            </div>
+            <div class="card-body form-group row gx-2 gy-3">
+                <div class="row">
+                    <div class="form-floating col-4">
+                        <input type="text" class="form-control form-control-sm" id="gsv" name="gsv" th:value="${dado?.gsv}"
+                               autocomplete="off" disabled="">
+                        <label for="gsv">GSV</label>
+                    </div>
+                    <div class="form-floating col-4">
+                        <input type="text" class="form-control form-control-sm" name="tribunal" id="tribunal"
+                               th:value="${dado?.tribunal}" autocomplete="off" disabled="">
+                        <label for="tribunal">Tribunal / UF</label>
+                    </div>
+                    <div class="form-floating col-4">
+                        <input type="text" class="form-control form-control-sm"name="comarca" th:value="${dado?.comarca}" id="comarca"
+                               autocomplete="off" disabled="">
+                        <label for="comarca">Comarca </label>
+                    </div>
+                    <div class="form-floating col-4">
+                        <input type="text" class="form-control form-control-sm" name="orgao" id="orgao"
+                               th:value="${dado?.orgao}" autocomplete="off" disabled="">
+                        <label for="orgao">Órgão / Deprecante</label>
+                    </div>
+                    <div class="form-floating col-4">
+                        <input type="text" class="form-control form-control-sm" name="esfera" id="esfera"
+                               th:value="${dado?.esfera}" autocomplete="off" disabled="">
+                        <label for="esfera">Esfera </label>
+                    </div>
+                    <div class="form-floating col-4">
+                        <input type="text" class="form-control form-control-sm" name="processo" id="processo"
+                               th:value="${dado?.processo}" autocomplete="off" disabled="">
+                        <label for="processo">Processo / Ação Originaria</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

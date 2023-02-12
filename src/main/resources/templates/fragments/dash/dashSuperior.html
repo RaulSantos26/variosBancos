@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div style="padding-top: 50px;" th:fragment="dash-superior">
+    <div class="row justify-content-around py-3 px-4" id="upperDash">
+        <div class="row flex-row flex-wrap py-3 ">
+            <div class="col-7" th:replace="~{/fragments/dash/dadosGsv.html :: detalhe-gsv}"></div>
+            <!-- Bloco Busca-->
+<!--            <div th:replace="~{/fragments/dash/busca.html :: busca}"></div>-->
+            <!--Fim do Bloco Busca-->
+            <!--Bloco Cabeçalho Conta-->
+            <div th:replace="~{/fragments/dash/blocoConta.html :: conta}"></div>
+            <!--Fim do Bloco cabeçalho conta-->
+            <div th:replace="~{/fragments/dash/dadosGsv.html :: dados-gsv}"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

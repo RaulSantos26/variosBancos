@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="col-7" th:fragment="detalhe-gsv">
+    <div class="row flex-row flex-wrap  px-5 hstack gap-3" id="">
+        <div class="card-header mz-1 ml-1">Olá <strong><span id="nomeFunci">Ana Silva</span></strong>,
+            acompanhe
+            aqui a sua fila.
+        </div>
+        <button class="btn btn-priorizado btn-sq-lg btn-sm col-2 rounded-5 me-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#priorizadoLista" aria-expanded="false"
+                aria-controls="priorizadoLista">
+            <div class="btn-tit">Priorizados</div>
+            <p>3</p>
+        </button>
+        <button class="btn btn-valor btn-sq-lg btn-sm col-2 rounded-5 me-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#diligenciaLista" aria-expanded="false"
+                aria-controls="diligenciaLista">
+            <div class="btn-tit">Aguardando Analise</div>
+            <p>14</p>
+        </button>
+        <button class="btn btn-valor btn-sq-lg btn-sm col-2 rounded-5 me-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#totalLista" aria-expanded="false"
+                aria-controls="totalLista">
+            <div class="btn-tit"> Diligencias</div>
+            <p>17</p>
+        </button>
+        <button class="btn btn-valor btn-sq-lg btn-sm col-2 rounded-5 me-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#validarLista" aria-expanded="false"
+                aria-controls="priorizadoLista">
+            <div class="btn-tit"> A validar gerente</div>
+            <p>3</p>
+        </button>
+        <button class="btn btn-total btn-sq-lg btn-sm col-2 rounded-5 me-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false"
+                aria-controls="priorizadoLista">
+            <div class="btn-tit">Total</div>
+            <p>3</p>
+        </button>
+        <div class="col-2"></div>
+    </div>
+</div>
+<di th:fragment="dados-gsv">
+    <!--Detalhe Priorizado-->
+    <div class="collapse" id="priorizadoLista" data-bs-parent="#upperDash">
+        <div class="card card-body filaFunci">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Protocolo</th>
+                    <th scope="col">Atividade</th>
+                    <th scope="col">Data</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>66951880</td>
+                    <td>RESGATAR DJO</td>
+                    <td>13/12/2022 08:26:33</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>78945880</td>
+                    <td>RESGATAR DJO</td>
+                    <td>13/12/2022 08:24:00</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>58800880</td>
+                    <td>RESGATAR DJO</td>
+                    <td>13/12/2022 08:12:33</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--Detalhe Aguardando Análise-->
+    <div class="collapse" id="diligenciaLista" data-bs-parent="#upperDash">
+        <div class="card card-body filaFunci">
+            Tabela Analise
+        </div>
+    </div>
+    <!--Detalhe Diligencias-->
+    <div class="collapse" id="totalLista" data-bs-parent="#upperDash">
+        <div class="card card-body filaFunci">
+            Tabela Diligencias
+        </div>
+    </div>
+    <!--Detalhe a Validar-->
+    <div class="collapse" id="validarLista" data-bs-parent="#upperDash">
+        <div class="card card-body filaFunci">
+            Tabela a Validar
+        </div>
+    </div>
+</di>
+</body>
+</html>

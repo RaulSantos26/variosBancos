@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="col-8" id="DadosCliente" th:fragment="dados-cliente" th:styleappend="${(hide == 1) ? 'display: none;' : ''}">
+  <div class="col-12 card">
+    <div class="card-body">
+      <div class="card-body form-group row ">
+        <div class="form-floating col-6">
+          <input type="text" class="form-control form-control-sm"
+                 name="nome_Requerente"
+                 value="123.456.789-00 - JÃO DA SILVA " autocomplete="off"
+                 disabled="">
+          <label for="floatingPlaintextInput">CPF/CNPJ - Requerente </label>
+        </div>
+        <div class="form-floating col-6">
+          <input type="text" class="form-control form-control-sm"
+                 name="nome_Advogado"
+                 value="123.123.123.45 - MARIA MARISTELA MAIRIPORÃ"
+                 autocomplete="off"
+                 disabled="">
+          <label for="floatingPlaintextInput">CPF - Advogado </label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="total_Aplicado"
+                 value="199.999.999.999.999,99" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Total Aplicado </label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="total_Reservado"
+                 value="" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Reservado</label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="total_Saldo"
+                 value="12.333,99" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Saldo Aplicado</label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="ptojetad_Dia"
+                 value="17.999,99" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Projetado p/ hoje</label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="vlr_IR_Anterior"
+                 value="199.999,99" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Valor IR Anterior </label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="mes_IR_Anterior"
+                 value="" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Meses IR Anterior</label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="vlr_IR_Atual"
+                 value="0,00" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Valor IR Atual </label>
+        </div>
+        <div class="form-floating col-3">
+          <input type="text" class="form-control form-control-sm"
+                 name="mes_IR_Atual"
+                 value="000" autocomplete="off" disabled="">
+          <label for="floatingPlaintextInput">Meses IR Atual</label>
+        </div>
+        <div class="form-floating col-4">
+          <input type="text" class="form-control form-control-sm"
+                 name="mes_IR_Atual"
+                 value="" autocomplete="off">
+          <label for="floatingPlaintextInput">Agência Resg.</label>
+        </div>
+        <div class="form-floating col-4">
+          <input type="text" class="form-control form-control-sm"
+                 name="mes_IR_Atual"
+                 value="" autocomplete="off">
+          <label for="floatingPlaintextInput">Mandado</label>
+        </div>
+        <div class="form-floating col-4">
+          <input type="date" class="form-control form-control-sm"
+                 name="mes_IR_Atual"
+                 value="" autocomplete="off">
+          <label for="floatingPlaintextInput">Data Emissão</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

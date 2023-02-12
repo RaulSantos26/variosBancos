@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+
+<div th:fragment="busca" class="col-5" id="blocoBusca" th:styleappend="${(hide == 0) ? 'display: none;' : ''}">
+    <div class="card c-extrato">
+        <div class="d-flex align-items-center highlight-toolbar bg-light ps-3 pe-2 py-2 mb-2">
+            <small class="font-monospace text-muted text-uppercase">Pagamento Avulso</small>
+        </div>
+        <div class="card-body form-group row gx-2 gy-3">
+            <form th:object="${pesquisaDTO}" action="integra" method="post">
+                <div class="row m-2">
+                    <div class="col-4 row">
+                        <label class="form-check-label col">Tipo:</label>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="tipo" id="tipoAOF"
+                                   value="contaJudicial" checked="checked">
+                            <label class="form-check-label" for="tipoAOF">
+                                AOF
+                            </label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="radio" name="tipo" id="tipoGSV"
+                                   value="gsv">
+                            <label class="form-check-label" for="tipoGSV">
+                                GSV
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 row">
+                    <div class="col-6 numeroGsv" style="display: none;">
+                        <input class="form-control" type="text" placeholder="Número GSV" name="gsv"
+                               aria-label="">
+                    </div>
+
+                    <div class="col-6 contaJudicial">
+                        <input class="form-control" type="text" placeholder="Conta Judicial" name="judicial"
+                               aria-label="">
+                        <div th:if="${#fields.hasErrors('judicial') != null}" th:errors="*{judicial}" class="error-message"></div>
+                        <div>
+                            <div class="error-message" th:if="${erro != null}" th:text="${erro}"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 consultarPagto">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input form-top" type="checkbox" role="switch"
+                                   id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">
+                                Consultar Pagamentos
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 row">
+                    <button type="submit" class="btn btn-sm btn-primary col-5 me-2" id="Tratar"> Tratar</button>
+                    <button type="button" class="btn btn-sm btn-primary col-5 me-2"> Nova Consulta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

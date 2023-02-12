@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<!-- Bloco Etapa
+    Observar na documentação elaborada pelo Zózimo a quantidade de etapas-->
+<div class="col-2 mb-2" id="Etapa" th:fragment="etapa" th:styleappend="${(hide == 1) ? 'display: none;' : ''}">
+    <div class="col-12 card">
+        <div class="d-flex align-items-center highlight-toolbar bg-light ps-3 pe-2 py-2 mb-2">
+            <small class="font-monospace text-muted text-uppercase">ETAPA</small>
+        </div>
+        <div class="col-md-12 ">
+            <ul class="timeline">
+                <li>
+                    <a id="tipoEmail" href="">Fila Entrada</a>
+                    <p id="dataEmail" class="data">dd/mm/aaaa</p>
+                </li>
+                <li>
+                    <a id="tipoTitulo" href="">Analisando</a>
+                    <p id="nr_matricula" class="data">F000000</p>
+                    <p id="nm_funci" class="data">Ana da Silva</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

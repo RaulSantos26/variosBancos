@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{home}">
+
+<body onload="myFunction()">
+<section layout:fragment="conteudo">
+
+    <div id="loader"></div>
+
+    <!--Dash-->
+    <div th:replace="~{/fragments/dash/dashSuperior.html :: dash-superior}"></div>
+    <!--Fim do Dash Superior -->
+    <!--conteudo
+        Sua exibição é controlada pelo Loader-->
+    <div id="Conteudo">
+        <div class="row m-2" id="ConteudoDetalhe">
+            <div class="card " th:styleappend="${(hide == 1) ? 'display: none;' : ''}">
+                <div class="card-header dp3-rxx">Pagamento Avulso</div>
+                <div class="card-body row">
+                    <div th:replace="~{/fragments/conteudo/etapa.html :: etapa}"></div>
+                    <!--Fim do Bloco Etapa-->
+                    <div class="col-9 row">
+
+                        <!--Lista Pagamentos-->
+                        <div th:replace="~{/fragments/conteudo/pagamentosAnteriores.html :: pagtos-anteriores}"></div>
+                        <!--Fm da Lista Pagamentos-->
+                        <!--Formulário-->
+                        <div th:replace="~{/fragments/conteudo/dadosCliente.html :: dados-cliente}"></div>
+                        <!-- Fim do formulário -->
+                        <div class="col-12">
+                            <div class="row">
+                                <!--Bloco Dados Resgate -->
+                                <div th:replace="~{/fragments/conteudo/dadosResgate.html :: dados-resgate}"></div>
+                                <!--Fim do Bloco Dados Resgate -->
+                            </div>
+                        </div>
+                        <!--Tabela Parcelas-->
+                        <div th:replace="~{/fragments/conteudo/dadosParcelas.html :: dados-parcelas}"></div>
+
+                    </div>
+                    <!--Botões-->
+                    <div th:replace="~{/fragments/conteudo/botoes.html :: botoes}"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Confirmação
+    Este ao fechar retorna a página inicial-->
+    <div th:replace="~{fragments/modal/confirmarPagamento :: confPagamento}"></div>
+    <!-- fim do Modal confirmação-->
+
+</section>
+</body>
+</html>

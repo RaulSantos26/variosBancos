@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <head th:replace="~{fragments/head :: head('Integra')}"></head>
+
+</head>
+<body>
+<header th:replace="~{fragments/header :: cabecalho}"></header>
+<div style="padding-top: 150px;" class="col-12" th:fragment="dados-resgate">
+    <div class="card mb-3" id="DadosResgate" th:styleappend="${(hide == 0 || hide == 1 ) ? 'display: none;' : ''}">
+        <div class="d-flex align-items-center highlight-toolbar bg-light ps-3 pe-2 py-2 mb-2">
+            <small class="font-monospace text-muted text-uppercase">DADOS PARA
+                RESGATE</small>
+        </div>
+
+        <form id="form-resgate" th:object="${dadosResgateDTO}" action="regaste" method="post">
+            <div>
+                <!--            <input type="text"   th:value="${aof?.judicial}" name="judicial">-->
+                <input type="text" th:value="${aof?.id}" name="id">
+            </div>
+
+
+            <div class="card-body form-group">
+                <div class="row">
+                    <div class="form-floating col-2">
+                        <input type="text" class="form-control form-control-sm"
+                               name="cc_Jud"
+                               value="000" autocomplete="off" disabled="">
+                        <label for="floatingPlaintextInput">Conta Judicial</label>
+                    </div>
+                    <button type="button" class="col-2 btn btn-xs btn-primary btn-line">
+                        Adicionar/Remover Conta
+                    </button>
+                    <div class="form-floating col-2">
+                        <select class="form-select form-select-xs mb-3" name="tipoValor"
+                                aria-label="">
+                            <option selected>Selecione</option>
+                            <option value="1">1 - Parcial</option>
+                            <option value="2">2 - Total</option>
+                        </select>
+                        <label for="floatingPlaintextInput">Tipo Valor:</label>
+                    </div>
+                    <div class="form-floating col-2">
+                        <select class="form-select form-select-xs mb-3" name="tipo"
+                                aria-label="">
+                            <option selected>Selecione</option>
+                            <option th:each="tipo : ${tipoPessoa}"
+                                    th:value="${tipo}" th:text="${tipo.name}"></option>
+
+                        </select>
+
+                        <label for="floatingPlaintextInput">Tipo Pessoa:</label>
+                    </div>
+
+
+                    <div class="form-floating col-2">
+                        <input type="text" class="form-control form-control-sm"
+                               name="cfp_cnpj"
+                               value="" autocomplete="off">
+                        <div th:if="${#fields.hasErrors('cfp_cnpj') != null}" th:errors="*{cfp_cnpj}" class="error-message"></div>
+                        <label for="floatingPlaintextInput">CPF/CNPJ</label>
+
+
+                        <div>
+<!--                            <div class="error-message" th:if="${erro != null}" th:text="${erro}"></div>-->
+                        </div>
+                    </div>
+                    <div class="form-floating col-2">
+                        <input type="text" class="form-control form-control-sm"
+                               name="nome" value="" autocomplete="off">
+                        <label for="floatingPlaintextInput">Nome Beneficiario:</label>
+                    </div>
+                    <div class="form-floating col-2">
+                        <input type="text" class="form-control form-control-sm"
+                               name="ag_inclusao" value="" autocomplete="off">
+                        <label for="floatingPlaintextInput">Ag.(Inclusão CPF):</label>
+                    </div>
+                    <div class="form-check col-2 ps-5 py-3">
+                        <input class="form-check-input" type="checkbox" name="representante" value="representante"
+                               id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Representante
+                        </label>
+                    </div>
+                    <div class="form-floating col-2">
+                        <input type="text" class="form-control form-control-sm"
+                               name="CPF_Represeantante" value="" autocomplete="off">
+                        <label for="floatingPlaintextInput">CPF Representate:</label>
+                    </div>
+
+                    <!--Bloco Finalidade
+                        O comportamento deste bloco, muda de acordo com a seleção do campo Finalidade, para alterar consulte o script ao final do arquivo-->
+                    <div th:replace="~{/fragments/conteudo/blocoFinalidade.html :: finalidade}"></div>
+                    <!--Fim do Bloco Finalidade-->
+                </div>
+            </div>
+            <div style="color:red;">
+                <p>Cade eu</p>
+                <div th:if="${#fields.hasErrors('cfp_cnpj') == null}" th:text="" class="error-message"></div>
+
+
+                <div class="error-message" th:if="${erro != null}" th:text="${erro}"></div>
+
+            </div>
+            <div class="col-lg-12" style="text-align: right;">
+                <button type="submit" class="btn btn-sm btn-primary col-2 mb-2"> Confirmar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

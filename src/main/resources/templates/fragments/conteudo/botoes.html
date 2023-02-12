@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div id="BotõesA" class="col-1" th:fragment="botoes" th:styleappend="${(hide == 1) ? 'display: none;' : ''}">
+  <div class="col d-grid gap-2">
+    <button id="BotãoCadastrar" type="button" class="btn btn-sm btn-success">Cadastrar
+      Pagamento
+    </button>
+    <button id="BotãoDocumento" type="button" class="btn btn-sm btn-warning"
+            onclick="openRequestedPopup()">Abrir Documentos
+    </button>
+    <!--Na terceira tela o "BotãoCadastrar" é substituido pelo "BotãoPagar"-->
+    <button id="BotãoPagar" type="button"  class="btn btn-sm btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#ModalConfirma">Efetuar Pagamento
+    </button>
+    <button type="button" class="btn btn-sm btn-danger">Devolver AOF</button>
+    <a type="button" class="btn btn-sm btn-outline-primary"
+       href="/">Voltar</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--      <title>Integra- DJO / Verificação de Documentos</title>-->
+<head th:replace="~{fragments/head :: head('Integra- DJO / Verificação de Documentos')}"></head>
+
+<body style="overflow-x: hidden; padding:1% 3%">
+<!--Começo do questionário inicial -->
+
+<div class="row col-rows-2">
+
+    <div class="col-3 gap-3">
+        <h5 style="color:#8f669e;">Documentos <br>Vinculados GSV</h5>
+        <button type="button" class="btn btn-sm btn-success col-12  mb-3" id="Abrdoc1">Documento<span id="nmDoc"> 12868745</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-success col-12  mb-3" id="Abrdoc2">Documento<span id="nmDoc"> 12844145</span>
+        </button>
+
+    </div>
+
+
+    <div class="col-9 mb-5">
+        <div id="invoice" class="card h1-00">
+            <h5 class="card-header">Visualização</h5>
+
+            <div class="card-body cardOpen" id="AvisoDoc"><img src="/images/oculos.png"><h5>Clique nos botões a esquerda
+                para visualizar um documento. </h5></div>
+
+            <div class="card-body" id="doc1">
+                <embed src="http://cenopservicossp.intranet.bb.com.br/Downloads/Integra/arquivos/Extrato DJO 700101727261.pdf"
+                       width="100%" height="100%"
+                       type="application/pdf">
+            </div>
+            <div class="card-body" id="doc2">
+                <embed src="http://cenopservicossp.intranet.bb.com.br/Downloads/Integra/arquivos/GSV 67494468 NPJ  20100082350 Conta  2000101180241.pdf"
+                       width="100%" height="100%"
+                       type="application/pdf">
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+
+
+<script>
+      $(document).ready(function(){
+         $('#AvisoDoc').show();
+          $('#doc1').hide();
+          $('#doc2').hide();
+          
+        $("#Abrdoc1").click(function(){
+          $('#doc2').hide();
+          $('#AvisoDoc').hide();                
+          $('#doc1').show();
+        
+        });
+        $("#Abrdoc2").click(function(){
+          $('#doc1').hide();
+          $('#AvisoDoc').hide();                
+          $('#doc2').show();
+         
+        });
+ 
+       
+      });
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/js/words.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+</html>
+
